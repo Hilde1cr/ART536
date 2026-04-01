@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Space</title>
+     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+<body>
+
+    <a-scene>
+    <a-assets>
+
+        <img id="floor-pattern" src="https://static.vecteezy.com/system/resources/thumbnails/026/828/138/small/birthday-silver-triangular-confetti-png.png" />
+
+        <a-mixin id="floor" geometry="primitive: box; height: 0.5 position: 0 2.5 0" material="emissive: #ede5dd; src: #floor-pattern; metalness: 0.75; roughness: 1" ></a-mixin>
+        <a-mixin id="wall" geometry="primitive: box; depth: 0.5"></a-mixin>
+        <a-mixin id="roof" geometry="primitive: box; height: 0.5"></a-mixin>
+
+    </a-assets>
+
+    <a-entity mixin="floor" geometry="width: 5; depth: 50" material="repeat: 2 20;"></a-entity>
+    <a-entity mixin="floor" geometry="width: 15; depth: 10" position="0 0 -30" material="repeat: 6 4;"></a-entity>
+    <a-entity mixin="floor" geometry="width: 15; depth: 10" position="0 0 30" material="repeat: 6 4;"></a-entity>
+    <a-entity mixin="floor" geometry="width: 5; depth: 7.5" position="-5 0 -15" material="repeat: 2 3;"></a-entity>
+    <a-entity mixin="floor" geometry="width: 5; depth: 7.5" position="5 0 15" material="repeat: 2 3;"></a-entity>
+    <a-entity mixin="floor" geometry="width: 5; depth: 7.5" position="-5 0 5" material="repeat: 2 3;"></a-entity>
+    <a-entity mixin="floor" geometry="width: 5; depth: 7.5" position="5 0 -5" material="repeat: 2 3;"></a-entity>
+
+    </a-scene>
+
+</body>
+</html>
