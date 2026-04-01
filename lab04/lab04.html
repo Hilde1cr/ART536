@@ -3,30 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clayton's room</title>
+    <title>Physics Module</title>
+
      <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.4/dist/aframe-physics-system.min.js"></script>
+
 </head>
+
 <body>
-    <a-scene>
-    <a-assets>
+    
+    <a-scene physics="debug: true">
+        <a-entity position="0 -10 0">
+            <a-sphere position="-10 20 -15" radius="1" color="#fff" dynamic-body="mass:100"></a-sphere>
 
+            <a-box position="-10 2 -15" static-body width="4" rotation="0 0 -30" ></a-box>
+            <a-box position="-10.5 2.5 -15" static-body width="4" rotation="0 0 -45" ></a-box>
+            <a-box position="-11 3 -15" static-body width="4" rotation="0 0 -60" ></a-box>
 
+            <a-cylinder position="7, 2, -15" radius="0.5" height="3" dynamic-body="mass:0.1"></a-cylinder>
+            <a-cylinder position="8, 2, -15.5" radius="0.5" height="3" dynamic-body="mass:0.1"></a-cylinder>
+            <a-cylinder position="8, 2, -14.5" radius="0.5" height="3" dynamic-body="mass:0.1"></a-cylinder>
+            <a-cylinder position="9, 2, -15" radius="0.5" height="3" dynamic-body="mass:0.1"></a-cylinder>
+            <a-cylinder position="9, 2, -16" radius="0.5" height="3" dynamic-body="mass:0.1"></a-cylinder>
+            <a-cylinder position="9, 2, -14" radius="0.5" height="3" dynamic-body="mass:0.1"></a-cylinder>
 
-            <a-mixin id="wall" geometry="primitive: box; width: 2; height: 5; depth: 0.3"></a-mixin>
-            <a-mixin id="column" geometry="primitive: cylinder; height: 5; radius: 0.5"></a-mixin>
-            <a-mixin id="primary" material="color: purple"></a-mixin>
-            <a-mixin id="secondary" material="color: yellow"></a-mixin>
+            <a-box position="0 0 -4" rotation="-90 0 0" width="40" height="40" depth="0.1" color="#7BC8A4" static-body="shape: box;"></a-box>
+        </a-entity>
 
-    </a-assets>
-
-    <a-entity mixin="wall primary" position="0 2.5 -5" geometry="width: 10"></a-entity>
-    <a-entity mixin="wall secondary" position="-5 2.5 0" rotation="0 90 0" geometry="width: 10"></a-entity>
-    <a-entity mixin="wall secondary" position="5 2.5 0" rotation="0 90 0" geometry="width: 10"></a-entity>
-    <a-entity mixin="wall primary" position="0 2.5 5" geometry="width: 10"></a-entity>
-
-
-    <a-sky color="#333"></a-sky>
-
+        <a-sky color="#222"></a-sky>
     </a-scene>
+
 </body>
+
 </html>
